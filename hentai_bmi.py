@@ -13,32 +13,15 @@ while True:
     bmi = weight / (height*height)
     print("あなたのBMIは" + str(bmi) + "です")
 
-    if bmi < 14:
-        date = ["ガリ子ちゃんは抱けないぜ","マシュマロボディが好きなんだよ！","肉食って出直してきな"]
-        comment_gariko = random.choice(date)
-        print(comment_gariko)
+    bmis = [[14, ["ガリ子ちゃんは抱けないぜ","マシュマロボディが好きなんだよ！","肉食って出直してきな"]],
+            [16, ["モデルさんかい！？", "小枝のような腕だ", "栄養、足りてる？"]],
+            [18, ["ええボディしてんな～", "スラッとした足舐めさせてーや", "嬢ちゃん一杯どお？"]],
+            [21, ["ちょうどええカラダ", "抱かしてや", "ちょっとだけ。ちょっとだけ触らして"]],
+            [23, ["ムッチリボディやな～", "好きやで。わい、おまんのカラダ。", "ぷにっぷにやな～"]],
+            [1000000000,["おっぱいがあれば、抱く", "おっぱいがないなら無価値","おっぱい頼み"]]]
 
-    elif 14 <= bmi < 16:
-        date = ["モデルさんかい！？", "小枝のような腕だ", "栄養、足りてる？"]
-        comment_model = random.choice(date)
-        print(comment_model)
-
-    elif 16 <= bmi <18:
-        date = ["ええボディしてんな～", "スラッとした足舐めさせてーや", "嬢ちゃん一杯どお？"]
-        comment_bijin = random.choice(date)
-        print(comment_bijin)
-
-    elif 18 <= bmi < 21:
-        date = ["ちょうどええカラダ", "抱かしてや", "ちょっとだけ。ちょっとだけ触らして"]
-        comment_nomal = random.choice(date)
-        print(comment_nomal)
-
-    elif 21 <= bmi < 23:
-        date = ["ムッチリボディやな～", "好きやで。わい、おまんのカラダ。", "ぷにっぷにやな～"]
-        comment_muchimuchi = random.choice(date)
-        print(comment_muchimuchi)
-
-    elif 23 <= bmi:
-        date =["おっぱいがあれば、抱く", "おっぱいがないなら無価値","おっぱい頼み"]
-        comment_debu = random.choice(date)
-        print(comment_debu)
+    for b, comments in bmis:
+        if bmi < b:
+            comment = random.choice(comments)
+            print(comment)
+            break
