@@ -4,6 +4,7 @@ while True:
     height = input("身長（ｍ）：")
     if len(height) ==0:
         print("身長くらいいいじゃん。教えてよ。")
+        continue
     weight = input("体重（ｋｇ）：")
     if len(weight) == 0:
         print("恥ずかしがらずに体重教えてよ。")
